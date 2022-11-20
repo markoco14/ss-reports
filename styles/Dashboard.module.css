@@ -1,0 +1,44 @@
+.grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar_toggle_button {
+    display: none;
+}
+
+.show_nav_toggle {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: row;
+    }
+
+    .navbar {
+        flex-direction: row;
+    }
+
+    .show_nav_toggle {
+        display: block; 
+    }
+    
+}
