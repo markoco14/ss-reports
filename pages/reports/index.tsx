@@ -6,6 +6,7 @@ import NavBar from '../../components/NavBar'
 
 const ReportsHome: NextPage = () => {
 
+    const [selectedStudent, setSelectedStudent] = useState<number | null>(null)
     const navLinks = [
         {
             text: 'Home',
@@ -23,7 +24,62 @@ const ReportsHome: NextPage = () => {
             text: 'Students',
             href: '#',
         },
+        {
+            text: 'Logout',
+            href: '/',
+        },
     ]
+
+    const students = [
+        {
+            id: 1,
+            name: 'Yi-Chen', 
+        },
+        {
+            id: 2,
+            name: 'Alfred', 
+        },
+        {
+            id: 3,
+            name: 'Le-Ya', 
+        },
+        {
+            id: 4,
+            name: 'Alan', 
+        },
+        {
+            id: 5,
+            name: 'Stanley', 
+        },
+        {
+            id: 6,
+            name: 'Terry', 
+        },
+        {
+            id: 7,
+            name: 'Sophia', 
+        },
+        {
+            id: 8,
+            name: 'Allie', 
+        },
+        {
+            id: 9,
+            name: 'Kui', 
+        },
+        {
+            id: 10,
+            name: 'Ray', 
+        },
+    ]
+
+    const handleSelectStudent = (id: number) => {
+        setSelectedStudent(id);
+    }
+
+    function getDate() {
+
+    }
 
     return (
         <>
@@ -35,7 +91,36 @@ const ReportsHome: NextPage = () => {
             <div className='dashboard_grid'>
                 <NavBar links={navLinks}></NavBar>
                 <main className="dashboard_main">
-                    <h1>This is the main</h1>
+                    <section>
+                        <div className='container'>
+                            <div>
+                                <h1 className='page-heading'>Daily Reports</h1>
+                                <p className='subtext'>Sept. 27, 2022</p>
+                            </div>
+                            <div>
+                                <p>Class: L8_1_MTh</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div className='student-reports-container'>
+                            {students.map((student) => (
+                                <div className='flex-column' key={`s-${student.id}`} >
+                                    <label style={{fontSize: '1.5em', letterSpacing: '0.1rem'}}>{student.name}</label>
+                                    <textarea className={`text-area text-area-dark ${student.id === selectedStudent ? 'text-area-active' : ''}`} onClick={() => {
+                                        (student.id !== selectedStudent) ? handleSelectStudent(student.id) : setSelectedStudent(null)
+                                    }}></textarea>
+                                    {student.id === selectedStudent ? (
+                                        <div className='student-input-save'>
+                                            <button className='form-link-button' onClick={() => {
+                                                console.log('saving student report!')
+                                            }}>Save</button>
+                                        </div>
+                                    ) : (null)}
+                                </div>
+                            ))}
+                        </div>
+                    </section>
                 </main>
             </div>
         </>
