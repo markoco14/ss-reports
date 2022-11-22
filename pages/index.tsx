@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   const router = useRouter();
   console.log(router)
 
-  function handleLogin(e) {
+  function handleLogin(e: any) {
     e.preventDefault();
     setLoading(true)
     setTimeout(() => {
