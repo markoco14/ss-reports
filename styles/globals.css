@@ -1,5 +1,12 @@
 /* https://piccalil.li/blog/a-modern-css-reset */
 
+:root {
+  --dark-bg: rgb(10, 10, 30);
+  --light-bg: rgb(75, 80, 100);
+  --btn-primary: rgb(30, 129, 221);
+  --btn-primary-hover: rgb(23, 104, 180);
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -34,6 +41,17 @@ html, body {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  /* font-family: 'Montserrat', sans-serif; */
+  /* background: rgb(30, 34, 49); */
+  /* color: white */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Russo One', sans-serif;
+}
+
+label, input {
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
@@ -70,6 +88,117 @@ a {
   }
 }
 
+h1 {
+  font-family: 'Russo One', sans-serif;
+}
+
+/* label {
+  font-family: 'Montserrat', sans-serif;
+} */
+
+.landing-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  background: var(--dark-bg);
+  color: white;
+  font-size: 1.5em;
+  font-family: 'sans-serif';
+}
+
+.logo {
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.login-form {
+  /* background: rgb(17, 20, 31); */
+  width: min(90vw, 800px);
+  padding: 1em;
+  border-radius: 10px;
+  color: white;
+  font-family: 'sans-serif';
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+/* .form-control > label {
+  margin-bottom: 1em;
+} */
+
+.form-control > input {
+  background: rgb(75, 80, 100);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5em;
+  color: rgba(238, 238, 238, 0.514);
+}
+
+.form-link-button {
+  text-align: center;
+  background-color: var(--btn-primary);
+  border-radius: 10px;
+  padding: 0.5em;
+  transition: all 2000ms;
+  color: inherit;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-link-button:hover {
+  background-color: var(--btn-primary-hover);
+  transition: all 200ms;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* utility classes */
+
+.form {
+  padding: 1rem 1rem 4rem;
+}
+
+.daily-report-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.short-form {
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Dashboard Container Styles */
 
 .dashboard_grid {
@@ -93,7 +222,6 @@ a {
   gap: 1rem;
   align-items: center;
   padding: 0.5rem 1rem;
-  background-color: rgb(0, 0, 0);
   color: white;
 }
 
